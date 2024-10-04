@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="script" href="script.js">
+</head>
+<body>
+    <script>
+              
+const coffeeTea = prompt(`Tea or Coffee ?`);
+      if (coffeeTea === `coffee` || `tea`) {
+        const wantSugar = prompt(`Do you want sugar ?`);
+        if (wantSugar === `yes`) {
+          const wantMilk = prompt(`Do you want milk`);
+        }else if(wantSugar === `no`){
+          const wantMilk = prompt(`Do you want milk`);
+          if (wantMilk === `yes`) {
+            const vegetalMilk = prompt(`Vegetal Milk ?`);
+            if (vegetalMilk === `yes`) {
+              const finalise1 = prompt(`${coffeeTea}, ${wantSugar}, ${wantMilk}, ${vegetalMilk} Are you sure ?`);
+              if(finalise1 === `yes`){
+                whatOrder();
+              }
+            }else if(vegetalMilk === `no`){
+              const finalise1 = prompt(`${coffeeTea}, ${wantSugar}, ${wantMilk}, ${vegetalMilk} Are you sure ?`);
+              if(finalise1 === `yes`){
+                whatOrder();
+              }
+              
+              }if(wantMilk === `no`){
+                const finalise2 = prompt(`${coffeeTea}, ${wantSugar}, ${wantMilk}, ${vegetalMilk} Are you sure ?`);
+                if(finalise2 === `yes`){
+                  whatOrder();
+                }
+              }
+            
+          }
+        }
+      }
+    
+    </script>
+    
+</body>
+</html>
