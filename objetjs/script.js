@@ -11,3 +11,4 @@ const billyThcecat = {
 const selectedProperty = prompt(`Select a property`);
 console.log(billyThecat[selectedProperty]);
 
+
