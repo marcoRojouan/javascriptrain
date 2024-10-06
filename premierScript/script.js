@@ -1,12 +1,16 @@
 function getUserInput(question) {
   return prompt(question);
 }
- function getUserResult(userResult) {
-  
+let formattedResult
+let isConfirmed = false;
+
+
+function getUserResult(a, b){
+  if (formattedResult !== a && formattedResult !== b){
+    isConfirmed = true
+  }
 }
 
-
-let isConfirmed = false;
 
 while (!isConfirmed) {
   // DRINK
@@ -16,11 +20,9 @@ while (!isConfirmed) {
     continue;
   }
 
-  let formattedResult = drink.trim().toLowerCase();
+  formattedResult = drink.trim().toLowerCase();
 
-  if (formattedResult !== "thé" && formattedResult !== "café") {
-    continue;
-  }
+  getUserResult("thé", "café");
 
   const formattedDrink = formattedResult;
 
@@ -34,9 +36,8 @@ while (!isConfirmed) {
 
   formattedResult = sugar.trim().toLowerCase();
 
-  if (formattedResult !== "oui" && formattedResult !== "non") {
-    continue;
-  }
+  getUserResult("oui", "non");
+
   const formattedSugar = formattedResult;
 
   //        MILK
@@ -48,9 +49,8 @@ while (!isConfirmed) {
 
   formattedResult = wantMilk.trim().toLowerCase();
 
-  if (formattedResult !== "oui" && formattedResult !== "non") {
-    continue;
-  }
+  getUserResult("oui", "non");
+
   const formattedWantMilk = formattedResult;
 
   let formattedMilk = "";
