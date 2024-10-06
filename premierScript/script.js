@@ -1,21 +1,30 @@
 function getUserInput(question) {
   return prompt(question);
 }
+ function getUserResult(userResult) {
+  
+}
+
 
 let isConfirmed = false;
 
 while (!isConfirmed) {
+  // DRINK
   const drink = getUserInput("Thé ou Café ?");
 
   if (!drink) {
     continue;
   }
 
-  const formattedDrink = drink.trim().toLowerCase();
+  let formattedResult = drink.trim().toLowerCase();
 
-  if (formattedDrink !== "thé" && formattedDrink !== "café") {
+  if (formattedResult !== "thé" && formattedResult !== "café") {
     continue;
   }
+
+  const formattedDrink = formattedResult;
+
+  //      SUGAR
 
   const sugar = getUserInput("Sucre ? Oui/Non");
 
@@ -23,22 +32,26 @@ while (!isConfirmed) {
     continue;
   }
 
-  const formattedSugar = sugar.trim().toLowerCase();
+  formattedResult = sugar.trim().toLowerCase();
 
-  if (formattedSugar !== "oui" && formattedSugar !== "non") {
+  if (formattedResult !== "oui" && formattedResult !== "non") {
     continue;
   }
+  const formattedSugar = formattedResult;
 
+  //        MILK
   const wantMilk = getUserInput("Voulez-vous du lait? Oui / Non");
+
   if (!wantMilk) {
     continue;
   }
 
-  const formattedWantMilk = wantMilk.trim().toLowerCase();
+  formattedResult = wantMilk.trim().toLowerCase();
 
-  if (formattedWantMilk !== "oui" && formattedWantMilk !== "non") {
+  if (formattedResult !== "oui" && formattedResult !== "non") {
     continue;
   }
+  const formattedWantMilk = formattedResult;
 
   let formattedMilk = "";
 
@@ -49,12 +62,13 @@ while (!isConfirmed) {
       continue;
     }
 
-    formattedMilk = milk.trim().toLowerCase();
+    formattedResult = milk.trim().toLowerCase();
 
-    if (formattedMilk !== "vache" && formattedMilk !== "végétal") {
+    if (formattedResult !== "vache" && formattedResult !== "végétal") {
       continue;
     }
   }
+  formattedMilk = formattedResult;
 
   alert(
     `Vous avez commandé du ${
