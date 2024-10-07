@@ -1,14 +1,14 @@
-const billyThcecat = {
-    catName: "Billy",
-    color: "blue",
-    favouriteFood: ["croquette", "paté", "thon"],
-    isHungry: true,
-    meow: function (){
-        console.log(`Meowwww`)
-    }
-};
-
-const selectedProperty = prompt(`Select a property`);
-console.log(billyThecat[selectedProperty]);
+let arr = [1, 2, 3, 4]
+arr.splice(1)
+console.log(arr);
+arr = [1, 2, 3, 4];
+arr.splice(2, 1)
+console.log(arr);
+arr = [1, 2, 3, 4];
+arr.splice(1, 2)
+console.log(arr);
+arr = [1, 2, 3, 4];
+arr.splice(1, 2, "two", "three")
+console.log(arr);
 
 

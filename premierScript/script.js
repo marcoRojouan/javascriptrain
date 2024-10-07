@@ -1,16 +1,12 @@
 function getUserInput(question) {
   return prompt(question);
 }
-let formattedResult
+let formattedResult = "";
 let isConfirmed = false;
 
-
-function getUserResult(a, b){
-  if (formattedResult !== a && formattedResult !== b){
-    isConfirmed = true
-  }
+function getUserResult(b, c) {
+  return formattedResult !== b && formattedResult !== c;
 }
-
 
 while (!isConfirmed) {
   // DRINK
@@ -22,7 +18,9 @@ while (!isConfirmed) {
 
   formattedResult = drink.trim().toLowerCase();
 
-  getUserResult("thé", "café");
+  if (getUserResult("thé", "café")) {
+    continue;
+  }
 
   const formattedDrink = formattedResult;
 
@@ -36,7 +34,9 @@ while (!isConfirmed) {
 
   formattedResult = sugar.trim().toLowerCase();
 
-  getUserResult("oui", "non");
+  if (getUserResult("oui", "non")) {
+    continue;
+  }
 
   const formattedSugar = formattedResult;
 
@@ -49,7 +49,9 @@ while (!isConfirmed) {
 
   formattedResult = wantMilk.trim().toLowerCase();
 
-  getUserResult("oui", "non");
+  if (getUserResult("oui", "non")) {
+    continue;
+  }
 
   const formattedWantMilk = formattedResult;
 
@@ -64,17 +66,18 @@ while (!isConfirmed) {
 
     formattedResult = milk.trim().toLowerCase();
 
-    if (formattedResult !== "vache" && formattedResult !== "végétal") {
+    if (getUserResult("vache", "végétal")) {
       continue;
     }
   }
+
   formattedMilk = formattedResult;
 
   alert(
     `Vous avez commandé du ${
       formattedDrink === "café" ? "café ☕️" : "thé 🫖"
     } ${formattedSugar === "oui" ? "avec du" : "sans"} sucre ${
-      formattedMilk ? `et du lait de ${formattedMilk}` : ""
+      formattedMilk ? `et du lait de ${formattedResult}` : ""
     }`
   );
 
