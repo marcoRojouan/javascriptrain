@@ -43,38 +43,28 @@ function createCard(animal) {
   cardImg.classList.add("card-img");
   card.appendChild(cardImg);
 
-  // Step2:
 
-  // Create the cardBody (figcaption), add the class card-body and add it to the card
   const cardBody = document.createElement ("figcaption");
   cardBody.classList.add ("card.body");
   card.appendChild(cardBody);
 
 
-  // Create the cardTitle h2, add the class card-title,
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card-title");
-  // set the text inside the tag to the "title" parameter of this function
   cardTitle.textContent = `${animal.name}`
-  // and add it to the cardBody
   cardBody.appendChild(cardTitle)
 
-  // Create the cardButton button, add the class card-button,
   const cardButton = document.createElement("button");
   cardButton.classList.add("card-button");
-  // set the text inside the tag to be "Adopt Now"
   cardButton.textContent = "Adopt now";
-  // and add it to the cardBody
   cardBody.appendChild(cardButton);
-  // Step 3: Listen for click events on the cardButton button,
-  // and run an alert when the button is clicked
   cardButton.addEventListener('click' , function(){
     alert(`${animal.name} adopted !`)
   })
 }
 
-/* Step 1: Use forEach instead of for-loop to iterate over animalsToAdopt and create cards */
 animalsToAdopt.forEach ((animal) => createCard(animal));
+
 
 
 
